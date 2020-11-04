@@ -3,3 +3,4 @@ ven*
 venv*
 __pycache__
 .vscode*
+.DS_Store
