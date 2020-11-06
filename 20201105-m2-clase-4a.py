@@ -25,8 +25,9 @@ while n > 0 :
 print('Secar!')
 
 
+# 4 ##########################################################################
+# ejemplo de while con interrupciones a través de break y continue
 print("\nLoop interrumpido")
-
 impostores = ["Diego", "Oscar", "Luis"]
 
 presentes = [
@@ -85,3 +86,8 @@ if contador_impostores_encontrados < len(impostores):
     print("ATENCIÓN: No se encontraron todos los impostores informados.")
 print("Tarea Terminada. Los cuerpos de los impostores han sido arrojados a un pozo negro!!!")
 
+
+# versión más eficiente del código 4, aún usando "while", "break", "continue" y sin utilizar "in"
+
+
+# versión ultra eficiente del código 4, con cualquier método
