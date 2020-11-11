@@ -123,3 +123,35 @@ for numero in range(0,100):
         continue
     print("El número actual: ", numero, " procesado es: ", 2*numero)
 print("El último número al que llegué es: ", numero)
+
+
+#/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/
+#\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\
+# Forma rapida de imprimir la lista sacando los intrusos convirtiendo lista en conjuntos\*/*\*/*\*/*\
+
+impostores=["niko","jose","kathe"]
+alumnos=["qwerty","poiuy","lkjhgf","asdfg","zxcvb","niko"]
+
+a= set(impostores)  # "set" El tipo set en Python es la clase utilizada por el lenguaje
+# para representar los conjuntos. Un conjunto es una colección desordenada de elementos 
+# únicos, es decir, que no se repiten. Este tutorial describe en detalle la clase set de 
+# Python, sus principales usos y operaciones.
+
+
+impostores=["niko","jose","kathe"]
+alumnos=["qwerty","poiuy","lkjhgf","asdfg","zxcvb","niko"]
+
+a= set(impostores)  # "set" El tipo set en Python es la clase utilizada por el lenguaje
+# para representar los conjuntos. Un conjunto es una colección desordenada de elementos 
+# únicos, es decir, que no se repiten. Este tutorial describe en detalle la clase set de 
+# Python, sus principales usos y operaciones.
+b= set(alumnos)
+
+alumnos= list(b-a)
+infiltrado= list(b&a)
+
+print("Reportar por Infiltracion", infiltrado)
+print("Alumnos Autorizados", alumnos)
+
+#/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/
+#\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\
