@@ -1,5 +1,6 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .models import SensorEstanque, SensorTemperatura, SensorPuerta, CodigoAcceso
+from .forms import SensorEstanqueFormulario
 import random
 # Create your views here.
 """ def crear_sensor_estanque(request):
@@ -56,3 +57,22 @@ def crear_sensor_estanque(request):
 
     context = {'key1': SensorEstanque.objects.values()}
     return render(request, 'app_sensores/sensor_estanque.html', context)
+
+def lista_sensores_estanque(request):
+    lista_sensores_estanque = list(SensorEstanque.objects.all().values())
+    sensores_estanque = {'sensores_estanque': lista_sensores_estanque}
+    return render(request, 'app_sensores/sensor_estanque.html', context=sensores_estanque)
+
+def agregar_sensor_estanque(request):
+    formulario = SensorEstanqueFormulario(request.POST or None)
+    context = {'form': formulario}
+    if formulario.is_valid():
+        form_data = formulario.cleaned_data
+        SensorEstanque.objects.create(
+                    marca=form_data['marca'], 
+					modelo=form_data['modelo'], 
+					nombre=form_data['nombre'], 
+					nivel=form_data['nivel'],
+                    )
+        return redirect('app_sensores:lista_sensores_estanque')
+    return render(request, 'app_sensores/agregar_sensor_estanque.html', context)
