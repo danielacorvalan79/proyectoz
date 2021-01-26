@@ -33,7 +33,7 @@ pieza_1 = Pieza("blanca", True)
 # In[19]:
 
 
-pieza_1.color
+#pieza_1.color
 
 
 # no exite atributo `color`
